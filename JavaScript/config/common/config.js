@@ -6,6 +6,6 @@ dotenv.config({
 });
 
 module.exports = {
-  port : process.env.PORT || 4041,
+  port : process.env.PORT || 8081,
   secret: process.env.SECRET,
 };

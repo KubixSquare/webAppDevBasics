@@ -230,3 +230,37 @@ Lets create the code structure of the NodeJS Program
 |   |   |---postgressConfig.js
     
 ```
+
+#### Using `.env` file as secret variable storage
+
+Development has been much easier since the invention of the `.env` file. You can easily set your environment variables and values with the syntax ENV_VARIABLE=VALUE and boom! These variables got loaded as your environment variables, making it possible to get quick access to them:
+
+```bash
+PORT = 8081
+SECRET = (Your_Super_Secret_Key)
+```
+
+Loading `.env` file : 
+```javascript
+> console.log(process.env.PORT)
+> 8081
+```
+
+#### Writing all code and running application 
+
+1. Write all the controller, routes, utils and other codes according to the structure and the files attached in the git.
+2. Run the code in development mode using `nodemon` which we have alredy configured in script of `package.json` which is inside `script->dev` to run this we will use :
+```bash
+npm run dev
+```
+This will start the server with following output:
+```javascript
+[nodemon] restarting due to changes...
+[nodemon] starting `node server.js`
+Application is running on http://localhost:8081
+```
+Go to the localhost link you will see the program running with thw following output:
+```javascript
+You hit home page! 
+```
+Which means our API base model is ready to work.
