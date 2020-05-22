@@ -111,22 +111,23 @@ Install essential packages from command line :
 ```bash
 npm install --save body-parser cors express helmet morgan nodemon axios multer xss-clean hpp cors express-session dotenv
 ```
+
 This command will install five dependencies in your project:
 
-`body-parser`: You will use this dependency to convert the body of incoming requests into JavaScript objects.
-`cors`: You will use this dependency to configure Express to add headers stating that your API accepts requests coming from other origins. This is known as Cross-Origin Resource Sharing (CORS).
-`express`: This is the Express library itself.
-`helmet`: This library helps to secure Express APIs by defining various HTTP headers.
-`morgan`: This library adds some logging capabilities to your Express API.
-`nodemon` : nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
-`axios` : Promise based HTTP client for the browser and node.js
-`multer` : Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files.
-`xss-clean` : Node.js Connect middleware to sanitize user input coming from POST body, GET queries, and url params.
-`hpp` : Express middleware to protect against HTTP Parameter Pollution attacks.
-`cors` : CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
-`express-rate-limit` : Basic rate-limiting middleware for Express. Use to limit repeated requests to public APIs and/or endpoints such as password reset.
-`express-session` : Create a session middleware.
-`dotenv` : Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
+* `body-parser`: You will use this dependency to convert the body of incoming requests into JavaScript objects.
+* `cors`: You will use this dependency to configure Express to add headers stating that your API accepts requests coming from other origins. This is known as Cross-Origin Resource Sharing (CORS).
+* `express`: This is the Express library itself.
+* `helmet`: This library helps to secure Express APIs by defining various HTTP headers.
+* `morgan`: This library adds some logging capabilities to your Express API.
+* `nodemon` : nodemon is a tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+* `axios` : Promise based HTTP client for the browser and node.js
+* `multer` : Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files.
+* `xss-clean` : Node.js Connect middleware to sanitize user input coming from POST body, GET queries, and url params.
+* `hpp` : Express middleware to protect against HTTP Parameter Pollution attacks.
+* `cors` : CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
+* `express-rate-limit` : Basic rate-limiting middleware for Express. Use to limit repeated requests to public APIs and/or endpoints such as password reset.
+* `express-session` : Create a session middleware.
+* `dotenv` : Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env. Storing configuration in the environment separate from code is based on The Twelve-Factor App methodology.
 
 > `--save` parameter in command will add the package name and version directly to the `package.json` file.
 
