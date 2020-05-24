@@ -15,7 +15,7 @@ const { secret } = require('./config/common/config');
 const postgresql = require('./config/database/postgresqlConfig');
 
 
-// Calling the Routes 
+// Importing the Routes 
 const covidRoutes = require('./routes/covid/covidRoutes')
 
 

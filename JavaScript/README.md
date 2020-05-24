@@ -265,3 +265,113 @@ Go to the localhost link you will see the program running with thw following out
 You hit home page! 
 ```
 Which means our API base model is ready to work.
+
+#### Working with Controller and Routes
+
+1. We will first create a controller to work with API function.
+`Inside controller folder we create a covid folder and write our code there.`
+```javascript
+// Example of the controller file covidController.js
+
+// Importing Axios for HTTP requests
+const axios = require('axios')
+
+// Removing the unknown data from the API filteration
+function removeUnknown(e) {
+    return e !== 'Unknown';
+}
+
+// Fetch data of Covid19 affected State and District list
+// Display data in JSON format File as response
+exports.covidstatewise = async (req, res, next) => {
+    try {
+        
+        // We are taking link from the user side.
+        // This is to check how passing parameters work in NodeJS
+        const link =  req.body.link;
+        // Using axios library to fetch data from the JSON output
+        const stateDistrictWiseResponse = (
+            await axios.get(link)
+        ).data;
+        const states = Object.keys(stateDistrictWiseResponse).filter(removeUnknown);
+        const result = {};
+        states.map((stateName) => {
+        result[stateName] = Object.keys(
+            stateDistrictWiseResponse[stateName]['districtData']
+        ).filter(removeUnknown);
+        });
+
+        // For true and sucess response is 200
+        // For failure the response can be passed 404 and status false 
+        res.status(200).json({
+            status: true,
+            message : 'COVID State And District Data list',
+            data: {
+                data : result
+            }
+        });
+
+    } catch (err) {
+        next(err);
+    }
+};
+```
+
+2. We will now create the route file to call the function created using path.
+`Inside routes folder we create a covid folder and write our code there.`
+```javascript
+// Example of the Routes file covidRoutes.js
+
+// Calling express for its Routes functionality
+const express = require('express');
+const router = express.Router();
+// Calling the Controller
+const covidController = require('../../controllers/covid/covidController');
+
+// Calling the Routes for the function created inside covidController
+// We call it using the name given to it during exports 'covidstatewise'
+// We are using post methods to fetch the data, there are get and other methods too
+router.post('/coviddata', covidController.covidstatewise);
+
+// Finally export the routers
+// This will be written once and will export all the routers in this file.
+module.exports = router;
+```
+
+3. Next step is to configure this in the app.js file.
+`We have to import the routes and give it a custom path in app.js`
+```javascript
+// Importing the Routes 
+const covidRoutes = require('./routes/covid/covidRoutes')
+
+// Routes Final Calling
+app.use('/api/v1',covidRoutes);
+
+```
+The Final API path will look like
+`http://localhost:8081/api/v1/coviddata`
+
+4. Now since we are passing a parameter we will use `Postman` application to check the API working.
+
+> Note You have to pass the parameter of link in the postman where Key will be `link` and Value will be `https://api.covid19india.org/state_district_wise.json`
+
+Screenshot of the Example : 
+![Postman API calling Screenshot](./screenshots/postmanworking.png "Postman API calling Screenshot")
+
+> Click on the send button and boom ! you have sucessfully created the API and tested it
+
+## Deploy on Heroku
+
+> If you want to deploy your API live and want to test it you can easily to it through Heroku, where even you can connect to your github where the API is pushed and set it to Automatic Deployment.
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/)
+
+
+## Thankyou for spending time learning how to create your strucured API in NodeJS
+
+> Created by [Jetso Analin](https://github.com/jetsoanalin)
+> Follow me on :
+[Github](https://github.com/jetsoanalin)
+[LinkedIn](https://linkedin.com/in/jetsoanalin)
+[Twitter](https://twitter.com/jetsoanalin)
+[Instagram](https://instagram.com/jetsoanalin)
