@@ -11,17 +11,12 @@ const session = require('express-session');
 
 const { secret } = require('./config/common/config');
 
-// const sessinauth = require('./common/authUtils');
-
-
 // Importing The Database
 const postgresql = require('./config/database/postgresqlConfig');
 
 
-// Importing Token Verification
-// const VerifyToken = require('./auth/VerifyToken')
-
 // Calling the Routes 
+const covidRoutes = require('./routes/covid/covidRoutes')
 
 
 // Calling the Error Handlers
@@ -85,8 +80,8 @@ app.get('/', (req, res) => {
     res.send(`You hit home page!\n`)
 })
 
-// Routes
-
+// Routes Final Calling
+app.use('/api/v1',covidRoutes);
 
 // handle undefined Routes
 app.use('*', (req, res, next) => {
