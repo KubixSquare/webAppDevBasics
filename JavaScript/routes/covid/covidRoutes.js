@@ -7,7 +7,9 @@ const covidController = require('../../controllers/covid/covidController');
 // Calling the Routes for the function created inside covidController
 // We call it using the name given to it during exports 'covidstatewise'
 // We are using post methods to fetch the data, there are get and other methods too
-router.post('/coviddata', covidController.covidstatewise);
+router.get('/coviddata', covidController.covidstatewise);
+router.post('/coviddatastatewise', covidController.checkstateaffected);
+router.post('/coviddatadistrictwise', covidController.checkdistrictaffected);
 
 // Finally export the routers
 // This will be written once and will export all the routers in this file.
