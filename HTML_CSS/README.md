@@ -9,3 +9,7 @@ https://undraw.co/search
 
 <!-- Paid and Free image source  -->
 https://freepik.com
+
+<!-- Free Learning -->
+https://www.tutorialspoint.com
+https://www.w3schools.com
