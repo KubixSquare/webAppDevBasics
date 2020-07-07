@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../CSS/Selectors.css">
-    <title>Selectors</title>
+    <title>Selectors and Table</title>
 </head>
 <body>
 <ul>
@@ -17,5 +17,30 @@
     <li><a>Anchor</a></li>
     <li><a>Anchor</a></li>
 </ul>
+
+<h1>Table in HTML</h1>
+
+<table border = "1" bordercolor = "green" bgcolor = "yellow">
+    <tr>
+       <th>Column 1</th>
+       <th>Column 2</th>
+       <th>Column 3</th>
+    </tr>
+    <tr>
+        <!-- Rowspan is added to occupy 2 rows -->
+       <td rowspan = "2">Row 1 Cell 1</td>
+       <td>Row 1 Cell 2</td>
+       <td>Row 1 Cell 3</td>
+    </tr>
+    <tr>
+        <!-- Since rowspan is added the first row must be empty -->
+       <td>Row 2 Cell 2</td>
+       <td>Row 2 Cell 3</td>
+    </tr>
+    <tr>
+        <!-- Colspan is added to occupy 3 space of column -->
+       <td colspan = "3">Row 3 Cell 1</td>
+    </tr>
+ </table>
 </body>
 </html>
