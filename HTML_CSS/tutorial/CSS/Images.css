@@ -25,6 +25,11 @@ img {
     padding-left: 11px;
 }
 
+.logos li img{
+    height: 100px;
+    width: auto;
+}
+
 /* Centering Images */
 /* <img> is an inline-level tag so it can't be centered with text-align */
 /* You can set the image to display:block and center it with margin:auto*/

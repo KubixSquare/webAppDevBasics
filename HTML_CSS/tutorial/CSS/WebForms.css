@@ -30,6 +30,7 @@
 /* The container around an input is a border, so you can style it with the border property */
 .styled-form input[type=text]{
     border: 2px solid #7facaa;
+    color: green;
 }
 
 /* Changing the height of an input*/

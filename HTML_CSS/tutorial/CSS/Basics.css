@@ -8,9 +8,9 @@
 
 /* Selectors: Type*/
 /* You can create a Type selectors by writing the tag name without <> brackets */
-p {
-    text-overline: 3;/* You can change any property of the tag */
-}
+/* p {
+    text-overline: 3;
+} */
 
 /*Selector: Syntax*/
 /*
@@ -24,6 +24,7 @@ p {
     text-overline: 3;
     text-underline: dot-dash;
     color: red;
+    font-size: 20px;
 }
 
 /* Selectors will select all matching tags on the page and apply the properties*/
@@ -49,4 +50,8 @@ ul li:hover{
 /* Also there is :nth-child(n) that defines particular child */
 ol li:first-child{
     color: lightcoral;
+}
+
+ol li:nth-child(3){
+    color: lightgreen;
 }
